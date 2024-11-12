@@ -1,5 +1,5 @@
 // import { Router } from "react-router-dom/cjs/react-router-dom.min";
-// import Blogdetails from "./Blogdetails";
+import Blogdetails from "./Blogdetails";
 import Create from "./Create";
 import Home from "./Home";
 import Navbar from "./Navbar";
@@ -19,7 +19,9 @@ function App() {
       <Create/>
       </Route>
 
-     
+      <Route  path="/blogs/:id">
+      <Blogdetails/>
+      </Route>
 
      </Switch>
       </div>
