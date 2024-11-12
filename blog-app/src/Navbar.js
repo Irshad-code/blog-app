@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 const Navbar=()=>{
    return(
         <div className="navbar">
             <h1>Blogs</h1>
           <div className="links">
-            <a href="/">menu</a>
-            <a href="/">new blog</a>
+            <Link to="/">menu</Link>
+            <Link to="/create">new blog</Link>
          </div>
         </div>
       

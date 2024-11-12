@@ -1,13 +1,30 @@
+// import { Router } from "react-router-dom/cjs/react-router-dom.min";
+// import Blogdetails from "./Blogdetails";
+import Create from "./Create";
 import Home from "./Home";
 import Navbar from "./Navbar";
+import {BrowserRouter as Router,Route,Switch} from "react-router-dom"
 function App() {
   return (
-    <div className="App">
+ <Router>
+     <div className="App">
    <Navbar/>
       <div className="content">
+     <Switch>
+      <Route exact path="/">
       <Home/>
+      </Route>
+
+      <Route  path="/create">
+      <Create/>
+      </Route>
+
+     
+
+     </Switch>
       </div>
     </div>
+ </Router>
   );
 }
 

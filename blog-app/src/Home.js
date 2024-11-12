@@ -1,13 +1,13 @@
 import Bloglist from "./Bloglist";
-import Usefetch from "./Usefetch";
+import Usefetch from "./hook/Usefetch";
 
 const Home=()=>{
-   const  {data,error,ispending}=Usefetch("http://localhost:8000/blogs");
+   const  {data:blogs,error,ispending}=Usefetch("http://localhost:8000/blogs");
       return(
         <div className="content">
-         {error && {error}}
-         {ispending && <h1>loading...</h1>}
-         {data && <Bloglist blogs={data} title="All blogs are listed"/>}
+         {error && <div>{error}</div>}
+         {ispending && <div>loading...</div>}
+         {blogs && <Bloglist blogs={blogs} title="All blogs are listed"/>}
              
         </div>
       );
