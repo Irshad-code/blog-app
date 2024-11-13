@@ -1,10 +1,13 @@
 import {useState} from 'react'
-
+import {useHistory } from 'react-router-dom'
+// import { useNavigate } from "react-router-dom";
 const Create = () => {
     const [title,titlestate]=useState('');
     const [body,bodystate]=useState('');
     const [author,authstate]=useState('irshu');
     const [ispending,ispenstate]=useState(false);
+    const history=useHistory();
+    // const navi=useNavigate();
     const handlesubmit=(e)=>{
          e.preventDefault();
          const obj={title,body,author};
@@ -17,9 +20,9 @@ const Create = () => {
           }).then(
             ()=>{
              console.log('blog is added');
-             ispenstate(false);
-            
-             
+             ispenstate(false); 
+             history.push('/');
+            //  navi("/");
             }          
           )
     }     ,1000);
